@@ -1,4 +1,4 @@
 ---
 - name: timezone
-  src: yatesr.timezone
+  src: molecule/test/resources/sample-role.tar.gz
   version: 1.1.0
