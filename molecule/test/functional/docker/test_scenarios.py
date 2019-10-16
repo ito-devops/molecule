@@ -221,9 +221,9 @@ def test_command_test_builds_local_molecule_image(
     scenario_to_test, with_scenario, scenario_name, driver_name
 ):
     try:
-        version = os.environ.get('TEST_CENTOS_VERSION', 7)
+        version = os.environ.get('TEST_DEBIAN_VERSION', 10-slim)
         cmd = sh.docker.bake(
-            'rmi', 'molecule_local/centos:{}'.format(version), '--force'
+            'rmi', 'molecule_local/debian:{}'.format(version), '--force'
         )
         pytest.helpers.run_command(cmd)
     except sh.ErrorReturnCode:

@@ -9,8 +9,8 @@ lint:
     config-file: ../../resources/.yamllint
 platforms:
   - name: instance
-    image: centos:${TEST_CENTOS_VERSION}
-    command: /sbin/init
+    image: "ito-devops/docker-${MOLECULE_DISTRO:-debian10}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-"/sbin/init"}
     privileged: true
 provisioner:
   name: ansible

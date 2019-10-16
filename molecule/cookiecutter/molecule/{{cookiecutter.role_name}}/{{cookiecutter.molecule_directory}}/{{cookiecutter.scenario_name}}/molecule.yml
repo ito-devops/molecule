@@ -17,7 +17,12 @@ platforms:
     size_id: s-1vcpu-1gb
 {%- elif cookiecutter.driver_name == 'docker' %}
   - name: instance
-    image: centos:7
+    image: "ito-devops/docker-${MOLECULE_DISTRO:-debian10}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
 {%- elif cookiecutter.driver_name == 'ec2' %}
   - name: instance
     image: ami-a5b196c0
