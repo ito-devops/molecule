@@ -36,10 +36,11 @@ Changes by np43:
 1 - changed molecule default os templates to debian10
 2 - added docker container to act as production-level ansible controller harness
 3 - random notes:
-    to change molecule behavior and install on machine, do:
-        git clone https://github.com/ito-devops/molecule.git && cd molecule
-        sudo pip3 install -U -e .
-    or, run pip3 install -U git+https://github.com/ito-devops/molecule
+to change molecule behavior and install on machine, do:
+git clone https://github.com/ito-devops/molecule.git && cd molecule
+sudo pip3 install -U -e .
+
+or, run pip3 install -U git+https://github.com/ito-devops/molecule
 
 Molecule provides support for testing with multiple instances, operating
 systems and distributions, virtualization providers, test frameworks and
